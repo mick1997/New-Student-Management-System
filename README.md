@@ -1,1 +1,1 @@
-# New-Student-Management-System
+# New Student Management System
