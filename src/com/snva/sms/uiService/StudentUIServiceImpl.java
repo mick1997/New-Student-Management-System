@@ -23,9 +23,10 @@ public class StudentUIServiceImpl implements IStudentUIService {
     @Override
     public void addNewStudent() {
         Student student = new Student();
-        student.setId(m_readUtil.readString("Please enter your id", "Input can not be empty!"));
+//        student.setId(m_readUtil.readInt("Please enter your id", "Input can not be empty!"));
         student.setfName(m_readUtil.readString("Please enter your First name", "Input can not be empty!"));
         student.setlName(m_readUtil.readString("Please enter your Last name", "Input can not be empty!"));
+        student.setDate(m_readUtil.readDate("Please enter your Birth date", "Input can not be empty!"));
         student.setPhoneNumber(m_readUtil.readDouble("Please enter your phone number", "Input can not be empty!"));
         student.setEmail(m_readUtil.readString("Please enter your email address", "Input can not be empty!"));
         student.setAddress(m_readUtil.readString("Please enter your address", "Input can not be empty!"));
@@ -47,7 +48,7 @@ public class StudentUIServiceImpl implements IStudentUIService {
     }
 
     @Override
-    public List<Student> searchStudentById(String id) {
+    public List<Student> searchStudentById(int id) {
         List<Student> studentList = null;
 
         try {
@@ -105,6 +106,7 @@ public class StudentUIServiceImpl implements IStudentUIService {
             System.out.println("Student ID: " + student.getId());
             System.out.println("Student First Name: " + student.getfName());
             System.out.println("Student Last Name: " + student.getlName());
+            System.out.println("Student Date of Birth: " + student.getDate());
             System.out.println("Student Gender: " + student.getSex());
             System.out.println("Student Phone Number: " + student.getPhoneNumber());
             System.out.println("Student Email: " + student.getEmail());

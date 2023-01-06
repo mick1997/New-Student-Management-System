@@ -1,23 +1,25 @@
 package com.snva.sms.bean;
 
-public class Student {
+import java.io.Serializable;
+import java.util.Date;
 
-    private String id;
+public class Student implements Serializable {
+
+    private int id;
     private String fName;
     private String lName;
+    private Date date;
     private String sex;
     private double phoneNumber;
     private String email;
     private String address;
     private double GPA;
 
-    public Student() {}
-
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -35,6 +37,14 @@ public class Student {
 
     public void setlName(String lName) {
         this.lName = lName;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getSex() {
@@ -83,8 +93,9 @@ public class Student {
                 "id='" + id + '\'' +
                 ", fName='" + fName + '\'' +
                 ", lName='" + lName + '\'' +
+                ", date=" + date +
                 ", sex='" + sex + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", phoneNumber=" + phoneNumber +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", GPA=" + GPA +

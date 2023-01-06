@@ -35,7 +35,7 @@ public class Runner {
                     m_StudentUIService.showAllStudents();
                     break;
                 case 3:
-                    String id = m_readUtil.readString("Please enter Student ID", "input can not be empty");
+                    int id = m_readUtil.readInt("Please enter Student ID", "input can not be empty");
                     try {
                         m_StudentUIService.searchStudentById(id);
                         System.out.println();
