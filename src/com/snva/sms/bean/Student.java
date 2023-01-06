@@ -3,9 +3,10 @@ package com.snva.sms.bean;
 public class Student {
 
     private String id;
-    private String name;
+    private String fName;
+    private String lName;
     private String sex;
-    private String phoneNumber;
+    private double phoneNumber;
     private String email;
     private String address;
     private double GPA;
@@ -20,12 +21,20 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getfName() {
+        return fName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
     public String getSex() {
@@ -36,11 +45,11 @@ public class Student {
         this.sex = sex;
     }
 
-    public String getPhoneNumber() {
+    public double getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(double phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -72,7 +81,8 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
                 ", sex='" + sex + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +

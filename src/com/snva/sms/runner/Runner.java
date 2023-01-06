@@ -2,7 +2,7 @@ package com.snva.sms.runner;
 
 import com.snva.sms.bean.Student;
 import com.snva.sms.uiService.IStudentUIService;
-import com.snva.sms.uiService.IStudentUIServiceImpl;
+import com.snva.sms.uiService.StudentUIServiceImpl;
 import com.snva.sms.utils.ReadUtil;
 
 import java.util.ArrayList;
@@ -10,12 +10,12 @@ import java.util.List;
 
 public class Runner {
 
-    private ReadUtil m_readUtil;
-    private IStudentUIService m_StudentUIService;
+    private final ReadUtil m_readUtil;
+    private final IStudentUIService m_StudentUIService;
 
     public Runner() {
         m_readUtil = new ReadUtil();
-        m_StudentUIService = new IStudentUIServiceImpl();
+        m_StudentUIService = new StudentUIServiceImpl();
         checkUserOptions();
     }
 
@@ -35,8 +35,25 @@ public class Runner {
                     m_StudentUIService.showAllStudents();
                     break;
                 case 3:
+                    String id = m_readUtil.readString("Please enter Student ID", "input can not be empty");
+                    try {
+                        m_StudentUIService.searchStudentById(id);
+                        System.out.println();
+                    }
+                    catch (NullPointerException e) {
+                        System.out.println("Student can not be found!");
+                    }
                     break;
                 case 4:
+                    String name = m_readUtil.readString("Please enter Student Name(or any part of name)",
+                            "input can not be empty");
+                    try {
+                        m_StudentUIService.searchStudentByName(name);
+                        System.out.println();
+                    }
+                    catch (NullPointerException e) {
+                        System.out.println("Student can not be found!");
+                    }
                     break;
                 case 5:
                     System.out.println("Thank you for using Student Management System!");
